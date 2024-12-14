@@ -12,7 +12,7 @@ export function filterProducts(products, category, renderFilters) {
 import {getFullProducts} from "./menu.js"
 
 
-// NO ME FUNCIONABA según padreGPT porque me faltaba establecer el inner en el menu.js (lo he vuetlo a cambiar). 
+// NO ME FUNCIONABA según padreGPT porque me faltaba establecer el inner en el menu.js (lo he que lo a cambiar). 
 He tenido que añadir el parámetro de renderizar para poder aprovechar la función a futuro y que vaya.
 Aquí es simplemente para que se ùeda añadir otro parámetro ahí y que sea utilizable, convirtiendolo a elementos HTML.
 
