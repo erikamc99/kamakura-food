@@ -20,7 +20,6 @@ function getFilters() {
         <button class="filter" data-category="${category}">${category}</button>
     `).join('');
     filterContainer.innerHTML = filterButtons;
-
     // Llamar a los botones por separado
     const filterButtonsElements = document.querySelectorAll('.filter');
     filterButtonsElements.forEach(button => {
