@@ -1,4 +1,4 @@
-import { products } from '../assets/data/data.js';
+import { products } from './data.js';
 import { filterProducts } from './searcher.js';
 
 //DEBE imprimir en pantalla la información de filtros.
@@ -7,11 +7,26 @@ const filterContainer = document.getElementById('filters');
 const productContainer = document.getElementById('products');
 
 // Obtener solo 1 categoría
+//erika
 function getFilterCategories(products) {
     const categories = products.map(product => product.category);
     return ['todos', ...new Set(categories)]; 
-}
-
+}   
+//lidia
+/* function crearTarjetasProductosInicio(products){
+    products.forEach(producto => {
+      const nuevaBicicleta = document.createElement("div");
+      nuevaBicicleta.classList = "tarjeta-producto"
+      nuevaBicicleta.innerHTML = `
+      <img src="./img/productos/${producto.id}.jpg" alt="Bicicleta 1">
+      <h3>${producto.nombre}</h3>
+      <p class="precio">$${producto.precio}</p>
+      <button>Agregar al carrito</button>` 
+      productContainer.appendChild(newKamura);
+      newKamura.getElementsByTagName("button")[0].addEventListener("click",() => agregarAlCarrito(products))
+    });
+  }
+  crearTarjetasProductosInicio(bicicletas);*/
 // Mostrar los filtros
 
 function getFilters() {
@@ -20,6 +35,7 @@ function getFilters() {
         <button class="filter" data-category="${category}">${category}</button>
     `).join('');
     filterContainer.innerHTML = filterButtons;
+
     // Llamar a los botones por separado
     const filterButtonsElements = document.querySelectorAll('.filter');
     filterButtonsElements.forEach(button => {
@@ -34,8 +50,9 @@ function getFilters() {
 //DEBE imprimir en pantalla los productos, con su Título, descripción y precio en € y botón de añadir.
 
 function getFullProducts(item) {
+    
     return `
-        <div class="product-container">
+         <div class="product-container">
             <h3>${item.name}</h3>
             <p>${item.description}</p>
             <div class="price-container">
@@ -43,8 +60,9 @@ function getFullProducts(item) {
                 <button class="add-button">Añadir</button>
             </div>
         </div>
-    `;
+    `; 
 }
+    
 
 // Llamadas para que se muestre todo (Tal vez deberíamos ir planteándonos eso de ir cambiando a events.js)
 getFilters();
